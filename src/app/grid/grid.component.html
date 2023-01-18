@@ -1,0 +1,21 @@
+<div class="container">
+	<div class="difficulty-selector">
+		<button class="difficulty-selector__easy" (click)="newGame(1)">Easy</button>
+		<button class="difficulty-selector__medium" (click)="newGame(2)">Medium</button>
+		<button class="difficulty-selector__hard" (click)="newGame(3)">Hard</button>
+	</div>
+	<div class="minesweeper-grid" [ngStyle]="getGridStyle()">
+		<button class=" minesweeper-grid__square" *ngFor="let square of asArray()"
+			[style.background-color]="square.backgroundColor" [style.color]="square.color()" (click)="squareClicked(square)"
+			(contextmenu)="squareRightClicked(square)">
+			<span *ngIf="square.isRevealed && square.isMine">💣</span>
+			<span
+				*ngIf="square.isRevealed && square.adjacentMinesCount > 0 && !square.isMine">{{square.adjacentMinesCount}}</span>
+			<span *ngIf="square.isFlagged && !square.isRevealed">🚩</span>
+		</button>
+	</div>
+	<div class="minesweeper-info">
+		<span class=" time">⏱ {{timeDisplay}}</span>
+		<span class="mine-count">💣 {{mineCount - squaresFlagged}}</span>
+	</div>
+</div>

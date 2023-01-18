@@ -1,0 +1,55 @@
+$square-size: 35px
+$square-margin: 5px
+
+.container
+    display: flex
+    justify-content: center
+    flex-direction: column
+    align-items: center
+    font-family: '9-segment-display'
+
+.difficulty-selector
+    display: flex
+    justify-content: space-between
+    width: 100%
+    max-width: 320px
+    margin: 20px
+
+.difficulty-selector button
+    width: 100px
+    height: 30px
+    background-color: 'black'
+    border: 0
+    border-radius: 10%
+    font-size: 18px
+    font-weight: bold
+
+.difficulty-selector__easy
+    background-color: #014B09
+
+.difficulty-selector__medium
+    background-color: #EF9B0F
+    color: 'black'
+
+.difficulty-selector__hard
+    background-color: #530000
+    color: 'white'
+
+.minesweeper-info
+    display: flex
+    justify-content: space-between
+    width: 250px
+    margin: 20px
+
+.minesweeper-grid
+    display: grid
+    grid-gap: 0px
+    border: 3px solid #A31ACB
+
+.minesweeper-grid__square
+    height: $square-size
+    width: $square-size
+    font-size: $square-size / 2
+    margin: 0
+    padding: 0
+    text-align: center
